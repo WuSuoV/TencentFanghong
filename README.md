@@ -6,4 +6,4 @@
 
 ## 使用方法
 
-`https://qiantigers.github.io/qq_fanghong/?url={your domain}`
+进入该网址：[qqred.qian.blue](https://qqred.qian.blue)
