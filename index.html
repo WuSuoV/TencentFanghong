@@ -1,4 +1,4 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8">
@@ -11,19 +11,22 @@
     var url = document.location.toString();
     var urlParmStr = url.slice(url.indexOf('=')+1);
     var ua = navigator.userAgent.toLowerCase();
+    var isQQ = ua.indexOf('QQ') != -1;
     var isWeixin = ua.indexOf('micromessenger') != -1;
     var isAndroid = ua.indexOf('android') != -1;
     var isIos = (ua.indexOf('iphone') != -1) || (ua.indexOf('ipad') != -1);
 
+    var notice_openBrowser = "<h2>请点击右上角，通过浏览器打开本页面。</h2>"
+
     // 判断是不是在微信客户端打开
-    if(isWeixin) {
+    if(isWeixin || isQQ) {
     // 判断是在Android的微信客户端还是Ios的微信客户端
     if (isAndroid) {
-    document.getElementById("tips").innerHTML="请在浏览器打开本页面";
+    document.getElementById("tips").innerHTML=notice_openBrowser;
     }else if (isIos) {
-    document.getElementById("tips").innerHTML="请在浏览器打开本页面";
+    document.getElementById("tips").innerHTML=notice_openBrowser;
     }else{
-    document.getElementById("tips").innerHTML="请在浏览器打开本页面";
+    document.getElementById("tips").innerHTML=notice_openBrowser;
     }
     } else {
     // 不是微信客户端，直接可以访问链接
