@@ -8,4 +8,4 @@
 
 进入该网址：[qqred.qian.blue](https://qqred.qian.blue)
 
-搭建教程：[https://www.qian.blue/archives/qq-weixin_fanghong.html](https://www.qian.blue/archives/qq-weixin_fanghong.html)
+搭建教程：[https://www.skyqian.com/archives/qq-weixin_fanghong.html](https://www.skyqian.com/archives/qq-weixin_fanghong.html)
