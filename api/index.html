@@ -10,15 +10,15 @@
     <div id="tips" style="font-size:25px;text-align: center;line-height: 50px;"></div>
     <script>
     var url = document.location.toString();
-    var urlParmStr = url.slice(url.indexOf('=')+1);
+    
    var urlBase64 = Base64.decode(url.slice(url.indexOf('=')+1));    
     var ua = navigator.userAgent.toLowerCase();
     var isQQ = ua.indexOf('qq') != -1;
     var isWeixin = ua.indexOf('micromessenger') != -1;
     var isAndroid = ua.indexOf('android') != -1;
     var isIos = (ua.indexOf('iphone') != -1) || (ua.indexOf('ipad') != -1);
-
-    var notice_openBrowser = "<h2>请点击右上角，通过浏览器打开本页面。</h2><br />查看更多：<b>www.yiove.com</b>"
+	document.getElementById("pbase64").innerHTML=urlBase64
+    var notice_openBrowser = "<h2>请点击右上角，通过浏览器打开本页面。</h2><br />原网址 选择复制：<p id="pbase64"></p>"
 
     // 判断是不是在微信客户端打开
     if(isWeixin || isQQ) {
@@ -33,7 +33,7 @@
     } else {
     // 不是微信客户端，直接可以访问链接
 
-    console.log(urlParmStr);
+    console.log("C牛6 https://github.com/cniu6/qq_fanghong/");
     location.href=urlBase64;
     }
 </script>
