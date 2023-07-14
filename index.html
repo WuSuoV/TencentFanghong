@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<title>QQ、微信防红接口 - 勿埋我心</title>
+		<title>QQ、微信防红接口 - C牛6二改</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -18,7 +18,7 @@
 		<!-- Signup Form -->
 			<form id="signup-form" method="post">
 				<input type="url" name="url" id="url" placeholder="需要跳转的网址" />
-				<input type="button" value="生成" onclick="build_url()"/>
+				<input type="button" value="生成" onclick="build_url_2()"/>
 			</form>
 			<p id="b_url"></p>
 
@@ -28,18 +28,33 @@
 			<footer id="footer">
 				<ul class="icons">
 
-					<li><a href="https://github.com/Qiantigers/qq_fanghong" class="icon brands fa-github" target="_blank"><span class="label">GitHub</span></a></li>
+					<li><a href="https://github.com/cniu6/qq_fanghong" class="icon brands fa-github" target="_blank"><span class="label">二改GitHub</span></a></li>
 
 				</ul>
 				<ul class="copyright">
-					<li>&copy; Powered by <a href="https://www.qian.blue" target="_blank">勿埋我心</a></li>
+					<li>&copy; 原作者 Powered by <a href="https://www.qian.blue" target="_blank">勿埋我心</a></li>
+				
+					<li>&copy; 二改作者 Powered by <a href="https://blog.zerohh.top" target="_blank">C牛6</a></li>
 				</ul>
 			</footer>
 
 		<!-- Scripts -->
+		<script>
+		function build_url_2(){
+    var url = encodeURI(decodeURI(document.querySelector('#url').value));
+    if (url === "" || url.indexOf("http") === -1){
+        document.getElementById("b_url").innerHTML=`输入的不是链接或者未加http请求头！`;
+    }
+    else {
+        url = document.location.href + "api/?base64=" + Base64.encodeURI(url);
+        document.getElementById("b_url").innerHTML=`<a href=${url} target='_blank'>${url}</a>`;
+    }
+		}
+		</script>
 			<script src="assets/js/main.js"></script>
 			<script async type="text/javascript" src="//js.users.51.la/21480329.js"></script>
 			<script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
 			<script>LA.init({id: "JsTawo0DkJhtEmv4",ck: "JsTawo0DkJhtEmv4"})</script>
-	</body>
+		<script src="https://cdn.jsdelivr.net/npm/js-base64@3.7.5/base64.min.js"></script>
+	</body>	
 </html>
