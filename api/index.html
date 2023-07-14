@@ -3,21 +3,24 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0,viewport-fit=cover">
-    <title>中转</title>
+    <title>Url中转 - C牛6</title>
+	<script src="https://cdn.jsdelivr.net/npm/js-base64@3.7.5/base64.min.js"></script>
 </head>
 <body>
     <div id="tips" style="font-size:25px;text-align: center;line-height: 50px;"></div>
+<small>复制: <a id="pbase64"></a></small>
     <script>
     var url = document.location.toString();
     var urlParmStr = url.slice(url.indexOf('=')+1);
+   var urlBase64 = Base64.decode(url.slice(url.indexOf('=')+1));    
     var ua = navigator.userAgent.toLowerCase();
     var isQQ = ua.indexOf('qq') != -1;
     var isWeixin = ua.indexOf('micromessenger') != -1;
     var isAndroid = ua.indexOf('android') != -1;
     var isIos = (ua.indexOf('iphone') != -1) || (ua.indexOf('ipad') != -1);
-
-    var notice_openBrowser = "<h2>请点击右上角，通过浏览器打开本页面。</h2><br />查看更多：<b>www.yiove.com</b>"
-
+	console.log("C牛6 https://github.com/cniu6/qq_fanghong/");
+    var notice_openBrowser = "<h2>请点击右上角，通过浏览器打开本页面。</h2><br />原网址"
+document.getElementById("pbase64").innerHTML=urlBase64;
     // 判断是不是在微信客户端打开
     if(isWeixin || isQQ) {
     // 判断是在Android的微信客户端还是Ios的微信客户端
@@ -30,11 +33,10 @@
     }
     } else {
     // 不是微信客户端，直接可以访问链接
-    if (urlParmStr == url){
-        urlParmStr = "https://www.yiove.com";
-    }
-    console.log(urlParmStr);
-    location.href=urlParmStr;
+
+    
+    location.href=urlBase64;
+	    
     }
 </script>
     <script async type="text/javascript" src="https://js.users.51.la/21480329.js"></script>
